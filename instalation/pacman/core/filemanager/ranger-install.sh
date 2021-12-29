@@ -1,4 +1,4 @@
-#!/bin/bashi
+#!/bin/bash
 
 sudo pacman -S --noconfirm ranger
 

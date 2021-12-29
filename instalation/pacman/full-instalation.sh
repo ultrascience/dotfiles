@@ -1,4 +1,4 @@
-#!/bin/bashi
+#!/bin/bash
 
 echo "Installing window manager..."
 source /home/aldo/dotfiles/instalation/pacman/full/windowmanager/xorg-install.sh

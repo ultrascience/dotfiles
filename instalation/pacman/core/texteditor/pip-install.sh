@@ -1,4 +1,4 @@
-#!/bin/bashi
+#!/bin/bash
 
 # Install pip3 
 sudo pacman -S python-pip

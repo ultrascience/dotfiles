@@ -1,6 +1,9 @@
 #!/bin/bash
 
-# Cambiando repositorios a debian 11
+echo "Configurando una contraseña para el usuario aldo"
+sudo passwd aldo
+
+echo "Cambiando repositorios a debian 11"
 sudo rm /etc/apt/sources.list
 sudo mv sources.list /etc/apt/
 

@@ -1,4 +1,4 @@
-#!/bin/bashi
+#!/bin/bash
 
 # Install rar on arch linux
 sudo pacman -S rar

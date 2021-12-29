@@ -1,4 +1,4 @@
-#!/bin/bashi
+#!/bin/bash
 
 sudo apt install -y  ranger
 
@@ -21,4 +21,4 @@ sudo apt install -y  mediainfo
 sudo apt install -y  xclip
 
 # Install feh on Arch Linux
-sudo apt install -y  feh
+# sudo apt install -y  feh
