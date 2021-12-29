@@ -33,4 +33,6 @@ else
     echo "Linux distribution not detected"
 fi
 
+mkdir -p ~/.config/
+echo "Copiando archivos de configuración"
 cp -r ~/dotfiles/configs/* ~/.config/
