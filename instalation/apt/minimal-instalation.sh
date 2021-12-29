@@ -5,11 +5,11 @@ sudo passwd aldo
 
 echo "Cambiando repositorios a debian 11"
 sudo rm /etc/apt/sources.list
-sudo mv sources.list /etc/apt/
+sudo mv /home/aldo/dotfiles/instalation/apt/sources.list /etc/apt/
 
-# Actualizando sistema a android 11
+# Actualizando sistema a debian 11
 sudo apt update
-sudo dist-upgrade -y
+sudo apt dist-upgrade -y
 
 source /home/aldo/dotfiles/instalation/apt/minimal/zsh-install.sh
 source /home/aldo/dotfiles/instalation/apt/minimal/pip3-install.sh
