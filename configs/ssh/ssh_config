@@ -1,0 +1,132 @@
+# ssh_config system-wide configuration for OpenSSH clients
+# This is the ssh client system-wide configuration file.  This
+# file provides defaults for users that are compliant with SSH
+# policy and ensure best practices are followed.  While this file
+# is compliant, please keep in mind that users can change settings
+# with user-specific overrides from the command line or their own
+# config file in some cases.
+# Configuration data is parsed as follows:
+#  1. command-line options
+#  2. user-specific file
+#  3. system-wide file
+# Site-wide defaults for various options
+# Relying on defaults can be challenging because the defaults can
+# change upon upgrades.  Specifying settings explicitly is
+# recommended if you understand the settings.
+# Version x.x
+# Date:
+
+Host *
+#This means the configuration applies to any host.  In
+# some cases options can be given that will allow different
+# configurations depending on what host the user would like to
+# connect to. Under normal circumstances, all machines are treated
+# the same.
+
+# Network Settings
+##################
+Port 22
+# SSH by default runs on port 22.
+
+AddressFamily inet
+# This network relies on IPv4 only.
+
+ConnectTimeout 10
+# Because this network occasionally has machines offline, we set a
+# timeout value so scripts do not hang.
+
+CheckHostIP yes
+# The DNS has been deemed quite reliable on this network.  This is
+# recommended as another form of host validation.
+
+TCPKeepAlive no
+# We are using ServerAliveInterval and ServerAliveCountMax
+ServerAliveInterval 10
+ServerAliveCountMax 5
+
+# Identifcation
+###############
+IdentitiesOnly yes
+# We would like only specified identities to be allowed to be
+# used.
+IdentityFile ~/.ssh/identity
+IdentityFile ~/.ssh/id_rsa
+IdentityFile ~/.ssh/id_dsa
+# The above files are defaults for user identification (keys).
+# Authentication
+
+################
+# Host-based Authentication
+HostbasedAuthentication no
+# We do not allow Host-based authentication in general.
+
+PubkeyAuthentication yes
+# We encourage the use of digital credentials.  They are more
+# difficult to spoof and cause less support calls/password resets.
+
+PasswordAuthentication yes
+# Some users/applications need passwords.  Password policy
+# (complexity, etc.) is enforced by the machines, not by OpenSSH.
+
+NoHostAuthenticationForLocalhost no
+# Home directories are not on NFS
+
+# Forwarding
+############
+ForwardAgent yes
+# In the intranet, agent forwarding is allowed to ease use of
+# patching, and system hopping via ssh. In a DMZ or untrusted
+# network, we disable agent forwarding to prevent accessing the
+# agent and crawling up the tunnel.  While we have no evidence of
+# this being a simple task, or a policy, we have found it best
+# practice.
+
+ForwardX11 yes
+ForwardX11Trusted yes
+# We always enable X11 forwarding.  Invariably our users will
+# want to use an X-Windows System from somewhere, and we would
+# rather it be over an encrypted connection than the standard X11-
+# type connections.
+
+# System Settings
+#################
+Protocol 2
+# Because of deficiencies in protocol 1, this network only
+# utilizes protocol 2.
+
+GlobalKnownHostsFile /etc/ssh/ssh_known_hosts
+# This file contains the public key cache of remote machines for
+# the local system.
+
+BatchMode no
+# This is a setting we change frequently on a per-user basis.
+# While the system-wide setting is no, users often change it to
+# yes from running scheduled tasks (cron) or application
+# connections. This setting prevents the ssh client from asking
+# for passwords or passphrases.
+
+StrictHostKeyChecking ask
+# Ask is the default for the system and for the interactive users.
+# In a batch mode (cron), oftentimes this is changed to no.
+# We educate users about what a host key change is and why
+# OpenSSH will not connect to a host with a changed key if they
+# have already cached it. This is done via emails and motd
+# (message of the day on unix).
+
+EscapeChar ~
+# This character allows users to background their current
+# session to run commands on the host they are connected rom.
+
+SendEnv PATH
+# Permit users to send PATH due to odd configurations on some
+# machines
+# Control Master is only allowed and configured by the user.
+
+LogLevel Verbose
+# Verbose Logging provides nice amounts of logs.
+
+# Encryption
+############
+# These ciphers are acceptable in the USA.  The legal department
+# handles what encryption is allowed outside the USA.
+# These only apply to protocol 2, because that is all that is allowed.

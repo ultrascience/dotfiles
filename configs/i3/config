@@ -1,0 +1,10 @@
+include ~/.config/i3/settings/*.conf
+include ~/.config/i3/keybinds/*.conf
+include ~/.config/i3/settings/*.conf
+
+#exec_always --no-startup-id /usr/lib/kdeconnectd
+exec_always --no-startup-id ~/.config/polybar/launch.sh
+exec --no-startup-id urxvtd -q -o -f & 
+exec --no-startup-id xrdb -merge ~/.Xresources
+exec_always --no-startup-id feh --bg-fill ~/wallpapers/a.jpg
+exec --no-startup-id picom -b
