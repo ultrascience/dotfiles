@@ -7,5 +7,5 @@ fi
 if [ "$updates" -gt 0 ]; then
     echo " $updates"
 else
-    echo " Sistema Actualizado"
+    echo ""
 fi
