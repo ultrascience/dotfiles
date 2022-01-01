@@ -19,8 +19,8 @@ vim.api.nvim_set_keymap('n', '<Insert>', '',
 vim.api.nvim_set_keymap('n', '<Insert>', 'ggVGy<CR>',
                         {noremap = true, silent = false})
 
-vim.api.nvim_set_keymap('n', '<Bar>', ':Neoformat<CR>',
-                        {noremap = true, silent = false})
+-- vim.api.nvim_set_keymap('n', '<Bar>', ':Neoformat<CR>',
+--                         {noremap = true, silent = false})
 
 vim.api.nvim_set_keymap('n', '<PageUp>', ':BufferPrevious<CR>',
                         {noremap = true, silent = false})
