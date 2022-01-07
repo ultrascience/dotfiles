@@ -13,6 +13,9 @@ vim.api.nvim_set_keymap('n', '<F3>', ':ToggleTerm<CR>',
 vim.api.nvim_set_keymap('n', '<F5>', "ggVG:SnipRun<CR>",
                         {noremap = true, silent = false})
 
+vim.api.nvim_set_keymap('n', '<F6>', ":RnvimrToggle<CR>",
+                        {noremap = true, silent = false})
+
 vim.api.nvim_set_keymap('n', '<F10>', ":lua require'dap'.step_over()<CR>",
                         {noremap = true, silent = false})
 

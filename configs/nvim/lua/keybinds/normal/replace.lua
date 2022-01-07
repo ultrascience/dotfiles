@@ -14,3 +14,9 @@ vim.api.nvim_set_keymap('n', 'r', ':s/\\<<C-r><C-w>\\>//g<Left><Left>',
 -- Reemplaza la seleccion visual
 vim.api.nvim_set_keymap('v', 'r', '"hy:%s/<C-r>h//gc<left><left><left>',
                         {noremap = true, silent = false})
+
+vim.api.nvim_set_keymap('n', 'f', '',
+                        {noremap = true, silent = false})
+
+vim.api.nvim_set_keymap('n', 'f', ':RnvimrToggle<CR>',
+                        {noremap = true, silent = false})

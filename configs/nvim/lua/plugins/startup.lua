@@ -15,6 +15,7 @@ return require('packer').startup(function()
     use {"folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim"}
     use {'nvim-treesitter/nvim-treesitter'}
     use {'nvim-orgmode/orgmode'}
+    use 'kevinhwang91/rnvimr'
     use 'lervag/vimtex'
     use 'windwp/nvim-ts-autotag'
     use 'norcalli/nvim-colorizer.lua'
