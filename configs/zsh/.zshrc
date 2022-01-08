@@ -36,7 +36,7 @@ ENABLE_CORRECTION="true"
 
 plugins=( command-not-found colored-man-pages zsh-autosuggestions globalias)
 
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[[ ! -f ~/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
 
 source "/home/aldo/.oh-my-zsh/oh-my-zsh.sh"
 
