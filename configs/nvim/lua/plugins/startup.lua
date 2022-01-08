@@ -15,6 +15,8 @@ return require('packer').startup(function()
     use {"folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim"}
     use {'nvim-treesitter/nvim-treesitter'}
     use {'nvim-orgmode/orgmode'}
+    use 'kevinhwang91/rnvimr'
+    use 'jose-elias-alvarez/nvim-lsp-ts-utils'
     use 'lervag/vimtex'
     use 'windwp/nvim-ts-autotag'
     use 'norcalli/nvim-colorizer.lua'
@@ -41,14 +43,6 @@ return require('packer').startup(function()
     use {"rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"}}
     use 'mfussenegger/nvim-dap-python'
     use 'kdheepak/lazygit.nvim'
-    use {
-        'sudormrfbin/cheatsheet.nvim',
-
-        requires = {
-            {'nvim-telescope/telescope.nvim'}, {'nvim-lua/popup.nvim'},
-            {'nvim-lua/plenary.nvim'}
-        }
-    }
     use 'tpope/vim-surround'
     use 'kdheepak/cmp-latex-symbols'
     use {

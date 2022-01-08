@@ -1,16 +1,3 @@
--- Launch debug sessions
-
-vim.api.nvim_set_keymap('n', '<F10>', ":lua require'dap'.step_over()<CR>",
-                        {noremap = true, silent = false})
-
-vim.api.nvim_set_keymap('n', '<F11>', ":lua require'dap'.step_into()<CR>",
-                        {noremap = true, silent = false})
-
-vim.api.nvim_set_keymap('n', '<F12>', ":lua require'dap'.step_out()<CR>",
-                        {noremap = true, silent = false})
-
-----------------------------------------------------------------------------------------------------------------------------------
---
 vim.api.nvim_set_keymap('n', '<leader>dt', ':lua require\'dapui\'.toggle()<CR>',
                         {noremap = true, silent = false})
 

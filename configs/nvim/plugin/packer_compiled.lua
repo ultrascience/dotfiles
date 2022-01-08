@@ -146,6 +146,11 @@ _G.packer_plugins = {
     path = "/home/aldo/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
+  ["gitsigns.nvim"] = {
+    loaded = true,
+    path = "/home/aldo/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
+    url = "https://github.com/lewis6991/gitsigns.nvim"
+  },
   ["hop.nvim"] = {
     loaded = true,
     path = "/home/aldo/.local/share/nvim/site/pack/packer/start/hop.nvim",
@@ -262,6 +267,11 @@ _G.packer_plugins = {
     path = "/home/aldo/.local/share/nvim/site/pack/packer/start/octo.nvim",
     url = "https://github.com/pwntester/octo.nvim"
   },
+  orgmode = {
+    loaded = true,
+    path = "/home/aldo/.local/share/nvim/site/pack/packer/start/orgmode",
+    url = "https://github.com/nvim-orgmode/orgmode"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/aldo/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -308,11 +318,6 @@ _G.packer_plugins = {
     path = "/home/aldo/.local/share/nvim/site/pack/packer/start/trouble.nvim",
     url = "https://github.com/folke/trouble.nvim"
   },
-  ["vgit.nvim"] = {
-    loaded = true,
-    path = "/home/aldo/.local/share/nvim/site/pack/packer/start/vgit.nvim",
-    url = "https://github.com/tanvirtin/vgit.nvim"
-  },
   ["vim-surround"] = {
     loaded = true,
     path = "/home/aldo/.local/share/nvim/site/pack/packer/start/vim-surround",
@@ -342,6 +347,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/aldo/.local/share/nvim/site/pack/packer/start/vimtex",
     url = "https://github.com/lervag/vimtex"
+  },
+  vimwiki = {
+    loaded = true,
+    path = "/home/aldo/.local/share/nvim/site/pack/packer/start/vimwiki",
+    url = "https://github.com/vimwiki/vimwiki"
   },
   ["which-key.nvim"] = {
     config = { "\27LJ\1\2;\0\0\2\0\3\0\a4\0\0\0%\1\1\0>\0\2\0027\0\2\0002\1\0\0>\0\2\1G\0\1\0\nsetup\14which-key\frequire\0" },

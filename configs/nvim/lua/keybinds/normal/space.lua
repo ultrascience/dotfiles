@@ -6,6 +6,7 @@ vim.api.nvim_set_keymap('n', '<space>i', ':Telescope lsp_implementations<CR>',
 
 vim.api.nvim_set_keymap('n', '<space>r', ':Telescope lsp_references<CR>',
                         {noremap = true, silent = true})
+
 vim.api.nvim_set_keymap('n', '<space>e', ':Telescope diagnostics<CR>',
                         {noremap = true, silent = true})
 
@@ -20,7 +21,6 @@ vim.api.nvim_set_keymap('n', '<space>m', ':Telescope marks<CR>',
 
 vim.api.nvim_set_keymap('n', '<space>c', ':Telescope command_history<CR>',
                         {noremap = true, silent = true})
-
 
 vim.api.nvim_set_keymap('n', '<space>s', ':Telescope search_history<CR>',
                         {noremap = true, silent = true})
@@ -49,22 +49,45 @@ vim.api.nvim_set_keymap('n', '<space>k', ':Telescope keymaps<CR>',
 vim.api.nvim_set_keymap('n', '<space>l', ':Telescope lsp',
                         {noremap = true, silent = false})
 
-
 vim.api.nvim_set_keymap('n', 't', '', {noremap = true, silent = false})
 vim.api.nvim_set_keymap('n', 't', ':Telescope git_files<CR>',
 
-                        {noremap = true, silent = false})
-
-vim.api.nvim_set_keymap('n', '<F1>', '', {noremap = true, silent = false})
-vim.api.nvim_set_keymap('n', '<F1>', ':Cheatsheet <CR>',
                         {noremap = true, silent = false})
 
 vim.api.nvim_set_keymap('n', 'h', '', {noremap = true, silent = false})
 vim.api.nvim_set_keymap('n', 'h', ':Telescope man_pages<CR>',
                         {noremap = true, silent = false})
 
-
-vim.api.nvim_set_keymap('n', 'l', '',
-                        {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', 'l', '', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', 'l', ':LazyGit<CR>',
                         {noremap = true, silent = true})
+
+vim.api.nvim_set_keymap('n', '<space>v', ':vsplit ',
+                        {noremap = true, silent = false})
+
+vim.api.nvim_set_keymap('n', '<space>h', ':split ',
+                        {noremap = true, silent = false})
+
+vim.api.nvim_set_keymap('n', '<space>o', ':on<CR>',
+                        {noremap = true, silent = true})
+
+vim.api.nvim_set_keymap('n', '<space>zm', ':mkview<CR>',
+                        {noremap = true, silent = false})
+
+vim.api.nvim_set_keymap('n', '<space>zl', ':loadview<CR>',
+                        {noremap = true, silent = false})
+
+vim.api.nvim_set_keymap('n', '<space>z', ':set foldmethod=syntax<CR>',
+                        {noremap = true, silent = true})
+
+vim.api.nvim_set_keymap('n', '<space>1', 'V}:normal @q<CR>',
+                        {noremap = true, silent = false})
+
+vim.api.nvim_set_keymap('n', '<space>n', ':vsplit | :split | :vsplit | :TroubleToggle<CR>',
+                        {noremap = true, silent = false})
+
+vim.api.nvim_set_keymap('n', '<space>x', 'ci"',
+                        {noremap = true, silent = false})
+
+vim.api.nvim_set_keymap('n', '<space>X', "ci'",
+                        {noremap = true, silent = false})
