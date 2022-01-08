@@ -1,11 +1,12 @@
 #!/bin/bash
 
 # Instala jetbrains font para o i3
-wget https://download.jetbrains.com/fonts/JetBrainsMono-1.0.0.zip
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/JetBrainsMono.zip
 
-# install iosevka font
-wget  https://github.com/be5invis/Iosevka/releases/download/v2.2.1/02-iosevka-term-2.2.1.zip
-unzip 02-iosevka-term-2.2.1.zip -d iosevka
-mkdir ~/.fonts
-mv iosevka/ttf/* ~/.fonts/
+# Download Iosevka fonts from github nerdfonts
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/Iosevka.zip
+
+mv JetBrainsMono.zip ~/.local/share/fonts/
+mv Iosevka.zip ~/.local/share/fonts/
+
 fc-cache -f -v
