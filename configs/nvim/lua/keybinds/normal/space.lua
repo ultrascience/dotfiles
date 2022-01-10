@@ -86,5 +86,8 @@ vim.api.nvim_set_keymap('n', '<space>1', 'V}:normal @q<CR>',
 vim.api.nvim_set_keymap('n', '<space>n', ':vsplit | :split | :vsplit | :TroubleToggle<CR>',
                         {noremap = true, silent = false})
 
-vim.api.nvim_set_keymap('n', '<space>ts', ':TSL',
+vim.api.nvim_set_keymap('n', '<space>x', 'ci"',
+                        {noremap = true, silent = false})
+
+vim.api.nvim_set_keymap('n', '<space>X', "ci'",
                         {noremap = true, silent = false})

@@ -32,15 +32,7 @@ require'nvim-treesitter.configs'.setup {
 
             keymaps = {
                 -- You can use the capture groups defined in textobjects.scm
-                ["fo"] = "@function.outer",
-                ["fi"] = "@function.inner",
-                ["io"] = "@if.outer",
-                ["ii"] = "@if.inner",
-                ["eo"] = "@else.outer",
-                ["ei"] = "@else.inner",
-                ["ts"] = "@try.outer",
-                ["ti"] = "@try.inner",
-                ["cs"] = "@catch.outer",
+                ["f"] = "@function.outer",
                 ["c"] = "@class.outer",
                 ["i"] = "@loop.outer"
             }
