@@ -38,7 +38,7 @@ do
     vim.lsp.handlers[method] = function(err, method, result, client_id, bufnr,
                                         config)
         default_handler(err, method, result, client_id, bufnr, config)
-        local diagnostics = vim.lsp.diagnostic.get_all()
+        local diagnostics = vim.diagnostic.get()
         local qflist = {}
         for bufnr, diagnostic in pairs(diagnostics) do
             for _, d in ipairs(diagnostic) do
@@ -52,4 +52,16 @@ do
         vim.lsp.util.set_qflist(qflist)
     end
 end
+
+local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+for type, icon in pairs(signs) do
+  local hl = "DiagnosticSign" .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+end
+
+vim.diagnostic.config({
+  virtual_text = {
+    prefix = '●'
+  }
+})
 

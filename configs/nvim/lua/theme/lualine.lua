@@ -40,7 +40,7 @@ local config = {
     },
     sections = {
         -- these are to remove the defaults
-        lualine_a = {},
+        lualine_a = {'mode'},
         lualine_b = {},
         lualine_y = {},
         lualine_z = {},
@@ -70,45 +70,28 @@ local function ins_right(component)
 end
 
 ins_left {
-    function() return '▊' end,
-    color = {fg = colors.blue}, -- Sets highlighting of component
-    left_padding = 0 -- We don't need space before this
+    'branch',
+    icon = '',
+    condition = conditions.check_git_workspace,
+    color = {fg = colors.violet, gui = 'bold'}
 }
 
 ins_left {
-    -- mode component
-    function()
-        -- auto change color according to neovims mode
-        local mode_color = {
-            n = colors.red,
-            i = colors.green,
-            v = colors.blue,
-            [''] = colors.blue,
-            V = colors.blue,
-            c = colors.magenta,
-            no = colors.red,
-            s = colors.orange,
-            S = colors.orange,
-            [''] = colors.orange,
-            ic = colors.yellow,
-            R = colors.violet,
-            Rv = colors.violet,
-            cv = colors.red,
-            ce = colors.red,
-            r = colors.cyan,
-            rm = colors.cyan,
-            ['r?'] = colors.cyan,
-            ['!'] = colors.red,
-            t = colors.red
-        }
-        vim.api.nvim_command('hi! LualineMode guifg=' ..
-                                 mode_color[vim.fn.mode()] .. " guibg=" ..
-                                 colors.bg)
-        return ''
-    end,
-    color = "LualineMode",
-    left_padding = 0
+    'diff',
+    -- Is it me or the symbol for modified us really weird
+    symbols = {added = ' ', modified = '柳 ', removed = ' '},
+    color_added = colors.green,
+    color_modified = colors.orange,
+    color_removed = colors.red,
+    condition = conditions.hide_in_width
 }
+
+ins_left {
+    'filename',
+    condition = conditions.buffer_not_empty,
+    color = {fg = colors.magenta, gui = 'bold'}
+}
+
 
 ins_left {
     -- filesize component
@@ -131,15 +114,12 @@ ins_left {
     condition = conditions.buffer_not_empty
 }
 
-ins_left {
-    'filename',
-    condition = conditions.buffer_not_empty,
-    color = {fg = colors.magenta, gui = 'bold'}
-}
 
-ins_left {'location'}
 
-ins_left {'progress', color = {fg = colors.fg, gui = 'bold'}}
+
+-- Insert mid section. You can make any number of sections in neovim :)
+-- for lualine it's any number greater then 2
+ins_left {function() return '%=' end}
 
 ins_left {
     'diagnostics',
@@ -150,28 +130,10 @@ ins_left {
     color_info = colors.cyan
 }
 
--- Insert mid section. You can make any number of sections in neovim :)
--- for lualine it's any number greater then 2
-ins_left {function() return '%=' end}
+ins_right {'location'}
 
-ins_left {
-    -- Lsp server name .
-    function()
-        local msg = 'No Active Ls'
-        local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
-        local clients = vim.lsp.get_active_clients()
-        if next(clients) == nil then return msg end
-        for _, client in ipairs(clients) do
-            local filetypes = client.config.filetypes
-            if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
-                return client.name
-            end
-        end
-        return msg
-    end,
-    icon = ' LSP:',
-    color = {fg = '#ffffff', gui = 'bold'}
-}
+ins_right {'progress', color = {fg = colors.fg, gui = 'bold'}}
+
 
 -- Add components to right sections
 ins_right {
@@ -189,27 +151,25 @@ ins_right {
 }
 
 ins_right {
-    'branch',
-    icon = '',
-    condition = conditions.check_git_workspace,
-    color = {fg = colors.violet, gui = 'bold'}
+    -- Lsp server name .
+    function()
+        local msg = 'No Active Ls'
+        local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
+        local clients = vim.lsp.get_active_clients()
+        if next(clients) == nil then return msg end
+        for _, client in ipairs(clients) do
+            local filetypes = client.config.filetypes
+            if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
+                return client.name
+            end
+        end
+        return msg
+    end,
+    icon = '',
+    color = {fg = '#ffffff', gui = 'bold'}
 }
 
-ins_right {
-    'diff',
-    -- Is it me or the symbol for modified us really weird
-    symbols = {added = ' ', modified = '柳 ', removed = ' '},
-    color_added = colors.green,
-    color_modified = colors.orange,
-    color_removed = colors.red,
-    condition = conditions.hide_in_width
-}
 
-ins_right {
-    function() return '▊' end,
-    color = {fg = colors.blue},
-    right_padding = 0
-}
 
 -- Now don't forget to initialize lualine
 lualine.setup(config)

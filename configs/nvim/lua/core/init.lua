@@ -4,21 +4,22 @@ M.load_options = function()
     local opt = vim.opt
 
     local default_options = {
-        backup = false, -- creates a backup file
-        clipboard = "unnamedplus", -- allows neovim to access the system clipboard
-        cmdheight = 2, -- more space in te neovim command line for displaying messages
+        backup = false,
+        clipboard = "unnamedplus", -- clipboard type
+        cmdheight = 4, -- more space in te neovim command line for displaying messages
         colorcolumn = "99999", -- fixes indentline for now
         completeopt = {"menuone", "noselect"},
         conceallevel = 0, -- so that `` is visible in markdown files
         fileencoding = "utf-8", -- the encoding written to a file
-        foldmethod = "manual", -- folding, set to "expr" for treesitter based folding
-        foldexpr = "", -- set to "nvim_treesitter#foldexpr()" for treesitter based folding
+        foldmethod = "expr", -- fold by indentation
+        foldexpr = "nvim_treesitter#foldexpr()", -- set to "nvim_treesitter#foldexpr()" for treesitter based folding
         guifont = "monospace:h17", -- the font used in graphical neovim applications
         hidden = true, -- required to keep multiple buffers and open multiple buffers
         hlsearch = true, -- highlight all matches on previous search pattern
+        incsearch = true, -- highlight the current match
         ignorecase = true, -- ignore case in search patterns
         mouse = "a", -- allow the mouse to be used in neovim
-        pumheight = 15, -- pop up menu height
+        pumheight = 20, -- pop up menu height
         showmode = false, -- we don't need to see things like -- INSERT -- anymore
         showtabline = 2, -- always show tabs
         smartcase = true, -- smart case
@@ -29,7 +30,6 @@ M.load_options = function()
         termguicolors = true, -- set term gui colors (most terminals support this)
         timeoutlen = 400, -- time to wait for a mapped sequence to complete (in milliseconds)
         title = true, -- set the title of window to the value of the titlestring
-        -- opt.titlestring = "%<%F%=%l/%L - nvim" -- what the title of the window will be set to
         undofile = true, -- enable persistent undo
         updatetime = 300, -- faster completion
         writebackup = true, -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
@@ -45,7 +45,9 @@ M.load_options = function()
         spell = true,
         spelllang = "en",
         scrolloff = 8, -- is one of my fav
-        sidescrolloff = 8
+        sidescrolloff = 8,
+        scrolljump = 2
+
     } ---  VIM ONLY COMMANDS  ---cmd "filetype plugin on"cmd('let &titleold="' .. TERMINAL .. '"')cmd "set inccommand=split"cmd "set iskeyword+=-"
 
     ---  SETTINGS  ---

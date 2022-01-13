@@ -15,8 +15,8 @@ vim.api.nvim_set_keymap('n', 'r', ':s/\\<<C-r><C-w>\\>//g<Left><Left>',
 vim.api.nvim_set_keymap('v', 'r', '"hy:%s/<C-r>h//gc<left><left><left>',
                         {noremap = true, silent = false})
 
-vim.api.nvim_set_keymap('n', 'f', '',
+vim.api.nvim_set_keymap('n', 'x', '',
                         {noremap = true, silent = false})
 
-vim.api.nvim_set_keymap('n', 'f', ':RnvimrToggle<CR>',
+vim.api.nvim_set_keymap('n', 'x', 'ciw',
                         {noremap = true, silent = false})

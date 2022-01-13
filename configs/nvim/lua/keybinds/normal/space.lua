@@ -37,7 +37,7 @@ vim.api.nvim_set_keymap('n', '<space>g', ':Telescope git',
 vim.api.nvim_set_keymap('n', '<space>w', ':Telescope live_grep<CR>',
                         {noremap = true, silent = true})
 
-vim.api.nvim_set_keymap('n', '<space>f', ':Telescope file_browser<CR>',
+vim.api.nvim_set_keymap('n', '<space>f', ':RnvimrToggle<CR>',
                         {noremap = true, silent = false})
 
 vim.api.nvim_set_keymap('n', '<space>j', ':Telescope jumplist<CR>',
@@ -69,15 +69,6 @@ vim.api.nvim_set_keymap('n', '<space>h', ':split ',
                         {noremap = true, silent = false})
 
 vim.api.nvim_set_keymap('n', '<space>o', ':on<CR>',
-                        {noremap = true, silent = true})
-
-vim.api.nvim_set_keymap('n', '<space>zm', ':mkview<CR>',
-                        {noremap = true, silent = false})
-
-vim.api.nvim_set_keymap('n', '<space>zl', ':loadview<CR>',
-                        {noremap = true, silent = false})
-
-vim.api.nvim_set_keymap('n', '<space>z', ':set foldmethod=syntax<CR>',
                         {noremap = true, silent = true})
 
 vim.api.nvim_set_keymap('n', '<space>1', 'V}:normal @q<CR>',

@@ -13,6 +13,8 @@ require("indent_blankline").setup {
 require('Comment').setup()
 require("todo-comments").setup()
 
+vim.cmd([[let g:indent_blankline_filetype_exclude = ['help','alpha'] ]])
+
 vim.cmd([[let g:vimtex_view_method = 'zathura']])
 vim.cmd(
     [[ autocmd FileType tex,latex nnoremap <buffer> <F5> <esc>:VimtexCompile<CR> ]])
@@ -38,10 +40,10 @@ dashboard.section.header.val = {
 -- Set menu
 dashboard.section.buttons.val = {
     dashboard.button( "n", " : Notes" , ":cd ~/Github/notes/ | :e index.md <CR>" ),
-    dashboard.button( "c", " : Current project" , ":cd ~/Github/current/ | :e README.md<CR>" ),
-    dashboard.button( "g", " : Git current project" , ":cd ~/Github/current/ | :LazyGit <CR>" ),
-    dashboard.button( "f", " : Find file on Repositories", ":cd $HOME/Github | Telescope find_files<CR>"),
-    dashboard.button( "l", " : Live Grep on Repositories", ":cd $HOME/Github | Telescope live_grep<CR>"),
+    dashboard.button( "c", " : Project" , ":cd ~/Github/current/ | :e README.md<CR>" ),
+    dashboard.button( "d", " : Dotfiles" , ":cd ~/Github/dotfiles | :e README.md <CR>" ),
+    dashboard.button( "f", " : Find file ", ":cd $HOME/Github | Telescope find_files<CR>"),
+    dashboard.button( "l", " : Live Grep ", ":cd $HOME/Github | Telescope live_grep<CR>"),
     dashboard.button( "r", " : Recent"   , ":Telescope oldfiles<CR>"),
     dashboard.button( "s", " : Settings" , ":e $MYVIMRC | :cd %:p:h | split . | wincmd k | pwd<CR>"),
     dashboard.button( "q", " : Quit NVIM", ":qa<CR>"),

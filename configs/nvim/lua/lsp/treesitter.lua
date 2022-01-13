@@ -32,9 +32,31 @@ require'nvim-treesitter.configs'.setup {
 
             keymaps = {
                 -- You can use the capture groups defined in textobjects.scm
-                ["f"] = "@function.outer",
-                ["c"] = "@class.outer",
-                ["i"] = "@loop.outer"
+                ["fo"] = "@function.outer",
+                ["fi"] = "@function.inner",
+                ["io"] = "@if.outer",
+                ["co"] = "@class.outer",
+                ["lo"] = "@loop.outer",
+                ["li"] = "@loop.inner",
+                ["ro"] = "@return.outer",
+                ["ri"] = "@return.inner",
+                ["eo"] = "@else.outer",
+                ["ei"] = "@else.inner",
+                ["st"] = "@statement.outer",
+                ["si"] = "@statement.inner",
+                ["sc"] = "@statement.continue",
+                ["sd"] = "@statement.break",
+                ["sp"] = "@statement.pass",
+                ["ss"] = "@statement.next",
+                ["sw"] = "@statement.while",
+                ["su"] = "@statement.until",
+                ["sl"] = "@statement.for",
+                ["se"] = "@statement.else",
+                ["to"] = "@try.outer",
+                ["ti"] = "@try.inner",
+                ["tc"] = "@try.catch",
+                ["te"] = "@try.except",
+                ["tf"] = "@try.finally"
             }
         },
         lsp_interop = {
