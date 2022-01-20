@@ -1,5 +1,5 @@
-vim.api
-    .nvim_set_keymap('n', '<BS>', '`.', {noremap = true, silent = false})
+-- vim.api
+--     .nvim_set_keymap('n', '<BS>', '`.', {noremap = true, silent = false})
 
 vim.api.nvim_set_keymap('n', '<C-Right>', '<C-w>l',
                         {noremap = true, silent = false})

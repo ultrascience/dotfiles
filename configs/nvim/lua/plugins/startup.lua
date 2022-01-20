@@ -9,9 +9,15 @@ return require('packer').startup(function()
     }
     use {"akinsho/toggleterm.nvim"}
     use {"lewis6991/gitsigns.nvim"}
-    use {"vimwiki/vimwiki"}
     use 'folke/tokyonight.nvim'
-    -- Lua
+    use({
+        'jakewvincent/mkdnflow.nvim',
+        config = function()
+            require('mkdnflow').setup({
+                -- Config goes here; leave blank for defaults
+            })
+        end
+    })
     use {"folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim"}
     use {'nvim-treesitter/nvim-treesitter'}
     use {'nvim-orgmode/orgmode'}

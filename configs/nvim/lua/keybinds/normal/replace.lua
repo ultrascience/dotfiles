@@ -20,3 +20,6 @@ vim.api.nvim_set_keymap('n', 'x', '',
 
 vim.api.nvim_set_keymap('n', 'x', 'ciw',
                         {noremap = true, silent = false})
+
+vim.api.nvim_set_keymap('n', '<BS>f', 'vfod',
+                        {noremap = false, silent = false})
