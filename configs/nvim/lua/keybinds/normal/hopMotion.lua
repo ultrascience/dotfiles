@@ -1,3 +1,4 @@
+-- vim.api.nvim_set_keymap('n', '<CR>1', ':HopChar1<CR>',
 vim.api.nvim_set_keymap('n', '<CR>1', ':HopChar1<CR>',
                         {noremap = true, silent = false})
 
@@ -21,3 +22,6 @@ vim.api.nvim_set_keymap('n', '<CR>w', ':HopWord<CR>',
 
 vim.api.nvim_set_keymap('n', '<CR>a', ':HopWordCurrentLine<CR>',
                         {noremap = true, silent = false})
+
+vim.api.nvim_set_keymap('n', 'ñ', 'vfogccxP',
+                        {noremap = false, silent = false})

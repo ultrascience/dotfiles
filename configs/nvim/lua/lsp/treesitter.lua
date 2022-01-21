@@ -56,7 +56,22 @@ require'nvim-treesitter.configs'.setup {
                 ["ti"] = "@try.inner",
                 ["tc"] = "@try.catch",
                 ["te"] = "@try.except",
-                ["tf"] = "@try.finally"
+                ["tf"] = "@try.finally",
+                -- comment
+                ["-o"] = "@comment.outer",
+                ["-i"] = "@comment.inner",
+                ["cl"] = "@comment.line",
+                ["cx"] = "@comment.docstring",
+                ["ki"] = "@call.inner",
+                ["ko"] = "@call.outer",
+                ["kc"] = "@call.class",
+                ["kd"] = "@call.def",
+                ["kf"] = "@call.function",
+                ["kv"] = "@call.variable",
+                ["kp"] = "@call.parameter",
+                ["kr"] = "@call.reference",
+                ["kt"] = "@call.type",
+                ["kx"] = "@call.extension"
             }
         },
         lsp_interop = {
