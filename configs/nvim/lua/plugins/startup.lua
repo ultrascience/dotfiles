@@ -20,7 +20,6 @@ return require('packer').startup(function()
     })
     use {"folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim"}
     use {'nvim-treesitter/nvim-treesitter'}
-    use {'nvim-orgmode/orgmode'}
     use 'kevinhwang91/rnvimr'
     use 'jose-elias-alvarez/nvim-lsp-ts-utils'
     use 'lervag/vimtex'

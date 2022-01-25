@@ -74,7 +74,7 @@ vim.api.nvim_set_keymap('n', '<space>o', ':on<CR>',
 vim.api.nvim_set_keymap('n', '<space>1', 'V}:normal @q<CR>',
                         {noremap = true, silent = false})
 
-vim.api.nvim_set_keymap('n', '<space>n', ':vsplit | :TroubleToggle<CR>',
+vim.api.nvim_set_keymap('n', '<space>n', ':vsplit | :vsplit | :TroubleToggle<CR>',
                         {noremap = true, silent = false})
 
 vim.api.nvim_set_keymap('n', '<space>x', 'ci"',

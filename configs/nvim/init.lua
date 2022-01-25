@@ -20,6 +20,4 @@ require('dap-python').setup('~/.virtualenvs/debugpy/bin/python')
 require("github")
 require('gitsigns').setup()
 
-require('orgmode').setup({
-    org_agenda_files = {'~/Github/notes/*', '~/my-orgs/**/*'}
-})
+require'lspconfig'.hls.setup{}
