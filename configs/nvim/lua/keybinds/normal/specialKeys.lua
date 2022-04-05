@@ -1,4 +1,3 @@
-
 vim.api.nvim_set_keymap('n', '<End>', '',
                         {noremap = true, silent = false})
 vim.api.nvim_set_keymap('n', '<End>', ':wq<CR>',
@@ -24,4 +23,3 @@ vim.api.nvim_set_keymap('n', '<Home>', ':TroubleToggle<CR>',
 
 vim.api.nvim_set_keymap('n', '<Del>', '', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<Del>', 'ggVGx', {noremap = true, silent = true})
-

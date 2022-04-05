@@ -1,27 +1,32 @@
--- vim.api.nvim_set_keymap('n', '<CR>1', ':HopChar1<CR>',
-vim.api.nvim_set_keymap('n', '<CR>1', ':HopChar1<CR>',
+vim.api.nvim_set_keymap('n', 'x', '',
+                        {noremap = false, silent = false})
+
+vim.api.nvim_set_keymap('n', 'x1', ':HopChar1<CR>',
                         {noremap = true, silent = false})
 
-vim.api.nvim_set_keymap('n', '<CR>2', ':HopChar2<CR>',
+vim.api.nvim_set_keymap('n', 'x2', ':HopChar2<CR>',
                         {noremap = true, silent = false})
 
-vim.api.nvim_set_keymap('n', '<CR>l', ':HopLine<CR>',
+vim.api.nvim_set_keymap('n', 'xl', ':HopLine<CR>',
                         {noremap = true, silent = false})
 
-vim.api.nvim_set_keymap('n', '<CR>a', ':HopPatternAC<CR>',
+vim.api.nvim_set_keymap('n', 'xb', ':HopPatternBC<CR>',
                         {noremap = true, silent = false})
 
-vim.api.nvim_set_keymap('n', '<CR>b', ':HopPatternBC<CR>',
+vim.api.nvim_set_keymap('n', 'xa', ':HopPatternAC<CR>',
                         {noremap = true, silent = false})
 
-vim.api.nvim_set_keymap('n', '<CR>p', ':HopPattern<CR>',
+vim.api.nvim_set_keymap('n', 'xw', ':HopWord<CR>',
                         {noremap = true, silent = false})
 
-vim.api.nvim_set_keymap('n', '<CR>w', ':HopWord<CR>',
+vim.api.nvim_set_keymap('n', 'xwa', ':HopWordAC<CR>',
                         {noremap = true, silent = false})
 
-vim.api.nvim_set_keymap('n', '<CR>a', ':HopWordCurrentLine<CR>',
+vim.api.nvim_set_keymap('n', 'xwb', ':HopWordBC<CR>',
                         {noremap = true, silent = false})
 
 vim.api.nvim_set_keymap('n', 'ñ', 'vfogccxP',
+                        {noremap = false, silent = false})
+
+vim.api.nvim_set_keymap('n', 'xc', ':HopWordCurrentLine<CR>',
                         {noremap = false, silent = false})

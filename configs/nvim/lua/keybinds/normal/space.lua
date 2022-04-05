@@ -4,16 +4,19 @@ vim.api.nvim_set_keymap('n', '<space>t', ':Telescope lsp_definitions<CR>',
 vim.api.nvim_set_keymap('n', '<space>i', ':Telescope lsp_implementations<CR>',
                         {noremap = true, silent = true})
 
-vim.api.nvim_set_keymap('n', '<space>r', ':Telescope lsp_references<CR>',
+vim.api.nvim_set_keymap('n', '<space>u', ':Telescope lsp_references<CR>',
                         {noremap = true, silent = true})
 
 vim.api.nvim_set_keymap('n', '<space>e', ':Telescope diagnostics<CR>',
                         {noremap = true, silent = true})
 
-vim.api.nvim_set_keymap('n', '<space>d', ':Telescope lsp_document_symbols<CR>',
+vim.api.nvim_set_keymap('n', '<space>y', ':Telescope lsp_document_symbols<CR>',
                         {noremap = true, silent = true})
 
-vim.api.nvim_set_keymap('n', '<space>a', ':Telescope lsp_code_actions<CR>',
+vim.api.nvim_set_keymap('n', 'a', '',
+                        {noremap = true, silent = true})
+
+vim.api.nvim_set_keymap('n', 'a', ':Telescope lsp_code_actions<CR>',
                         {noremap = true, silent = true})
 
 vim.api.nvim_set_keymap('n', '<space>m', ':Telescope marks<CR>',
@@ -22,10 +25,10 @@ vim.api.nvim_set_keymap('n', '<space>m', ':Telescope marks<CR>',
 vim.api.nvim_set_keymap('n', '<space>c', ':Telescope command_history<CR>',
                         {noremap = true, silent = true})
 
-vim.api.nvim_set_keymap('n', '<space>s', ':Telescope search_history<CR>',
+vim.api.nvim_set_keymap('n', '<space>h', ':Telescope search_history<CR>',
                         {noremap = true, silent = true})
 
-vim.api.nvim_set_keymap('n', '<space>T', ':Telescope treesitter<CR>',
+vim.api.nvim_set_keymap('n', '<space>t', ':Telescope treesitter<CR>',
                         {noremap = true, silent = true})
 
 vim.api.nvim_set_keymap('n', '<space>b', ':Telescope buffers<CR>',
@@ -46,9 +49,6 @@ vim.api.nvim_set_keymap('n', '<space>j', ':Telescope jumplist<CR>',
 vim.api.nvim_set_keymap('n', '<space>k', ':Telescope keymaps<CR>',
                         {noremap = true, silent = false})
 
-vim.api.nvim_set_keymap('n', '<space>l', ':Telescope lsp',
-                        {noremap = true, silent = false})
-
 vim.api.nvim_set_keymap('n', 't', '', {noremap = true, silent = false})
 vim.api.nvim_set_keymap('n', 't', ':Telescope git_files<CR>',
 
@@ -65,7 +65,7 @@ vim.api.nvim_set_keymap('n', 'l', ':LazyGit<CR>',
 vim.api.nvim_set_keymap('n', '<space>v', ':vsplit ',
                         {noremap = true, silent = false})
 
-vim.api.nvim_set_keymap('n', '<space>h', ':split ',
+vim.api.nvim_set_keymap('n', '<space>s', ':split ',
                         {noremap = true, silent = false})
 
 vim.api.nvim_set_keymap('n', '<space>o', ':on<CR>',
@@ -74,11 +74,5 @@ vim.api.nvim_set_keymap('n', '<space>o', ':on<CR>',
 vim.api.nvim_set_keymap('n', '<space>1', 'V}:normal @q<CR>',
                         {noremap = true, silent = false})
 
-vim.api.nvim_set_keymap('n', '<space>n', ':vsplit | :vsplit | :TroubleToggle<CR>',
-                        {noremap = true, silent = false})
-
-vim.api.nvim_set_keymap('n', '<space>x', 'ci"',
-                        {noremap = true, silent = false})
-
-vim.api.nvim_set_keymap('n', '<space>X', "ci'",
+vim.api.nvim_set_keymap('n', '<space>n', ':vsplit | :TroubleToggle<CR>',
                         {noremap = true, silent = false})

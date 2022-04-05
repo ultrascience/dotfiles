@@ -19,7 +19,7 @@ lsp_installer.on_server_ready(function(server)
         ts_utils.setup({
             debug = false,
             disable_commands = false,
-            enable_import_on_completion = false,
+            enable_import_on_completion = true,
 
             -- import all
             import_all_timeout = 5000, -- ms
@@ -31,7 +31,7 @@ lsp_installer.on_server_ready(function(server)
                 buffers = 4, -- loaded buffer names
             },
             import_all_scan_buffers = 100,
-            import_all_select_source = false,
+            import_all_select_source = true,
 
             -- filter diagnostics
             filter_out_diagnostics_by_severity = {},
@@ -42,7 +42,7 @@ lsp_installer.on_server_ready(function(server)
             inlay_hints_highlight = "Comment",
 
             -- update imports on file move
-            update_imports_on_move = false,
+            update_imports_on_move = true,
             require_confirmation_on_move = false,
             watch_dir = nil,
         })

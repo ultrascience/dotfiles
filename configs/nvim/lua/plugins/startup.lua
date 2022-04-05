@@ -8,17 +8,20 @@ return require('packer').startup(function()
         end
     }
     use {"akinsho/toggleterm.nvim"}
+    use {
+  'David-Kunz/cmp-npm',
+  requires = {
+    'nvim-lua/plenary.nvim'
+    }
+  }
+    use {"haringsrob/nvim_context_vt"}
+    use {"lukas-reineke/cmp-under-comparator"}
+    use {"chentau/marks.nvim"}
+    use {"jose-elias-alvarez/null-ls.nvim"}
     use {"lewis6991/gitsigns.nvim"}
     use 'folke/tokyonight.nvim'
-    use({
-        'jakewvincent/mkdnflow.nvim',
-        config = function()
-            require('mkdnflow').setup({
-                -- Config goes here; leave blank for defaults
-            })
-        end
-    })
     use {"folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim"}
+    use "vimwiki/vimwiki"
     use {'nvim-treesitter/nvim-treesitter'}
     use 'kevinhwang91/rnvimr'
     use 'jose-elias-alvarez/nvim-lsp-ts-utils'
@@ -67,13 +70,17 @@ return require('packer').startup(function()
         'numToStr/Comment.nvim',
         config = function() require('Comment').setup() end
     }
-
-    use 'hrsh7th/vim-vsnip'
-    use 'hrsh7th/vim-vsnip-integ'
-    use 'hrsh7th/cmp-vsnip'
-
-    use "rafamadriz/friendly-snippets"
-
+    use {'SirVer/ultisnips',
+    requires = {{'honza/vim-snippets', rtp = '.'}},
+    config = function()      
+      vim.g.UltiSnipsExpandTrigger = '<Plug>(ultisnips_expand)'      
+      vim.g.UltiSnipsJumpForwardTrigger = '<Plug>(ultisnips_jump_forward)'
+      vim.g.UltiSnipsJumpBackwardTrigger = '<Plug>(ultisnips_jump_backward)'
+      vim.g.UltiSnipsListSnippets = '<c-x><c-s>'
+      vim.g.UltiSnipsRemoveSelectModeMappings = 0
+    end
+}
+    use 'quangnguyen30192/cmp-nvim-ultisnips'
     use "lukas-reineke/indent-blankline.nvim"
     use 'sbdchd/neoformat'
     use {"mattn/emmet-vim"}

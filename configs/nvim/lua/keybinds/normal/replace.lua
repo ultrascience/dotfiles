@@ -1,25 +1,9 @@
-
-vim.api.nvim_set_keymap('n', 'r', '',
+vim.api.nvim_set_keymap('n', '<space>rc', ':s/\\<<C-r><C-w>\\>//g<Left><Left>',
                         {noremap = true, silent = false})
 
-vim.api.nvim_set_keymap('n', 'r', ':%s/\\<<C-r><C-w>\\>//g<Left><Left>',
-                        {noremap = true, silent = false})
-
-vim.api.nvim_set_keymap('n', 'R', '',
-                        {noremap = true, silent = false})
-
-vim.api.nvim_set_keymap('n', 'r', ':s/\\<<C-r><C-w>\\>//g<Left><Left>',
-                        {noremap = true, silent = false})
-
--- Reemplaza la seleccion visual
-vim.api.nvim_set_keymap('v', 'r', '"hy:%s/<C-r>h//gc<left><left><left>',
-                        {noremap = true, silent = false})
-
-vim.api.nvim_set_keymap('n', 'x', '',
-                        {noremap = true, silent = false})
-
-vim.api.nvim_set_keymap('n', 'x', 'ciw',
+vim.api.nvim_set_keymap('n', '<space>rg', ':%s/\\<<C-r><C-w>\\>//g<Left><Left>',
                         {noremap = true, silent = false})
 
 vim.api.nvim_set_keymap('n', '<BS>f', 'vfod',
                         {noremap = false, silent = false})
+

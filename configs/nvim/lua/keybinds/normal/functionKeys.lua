@@ -22,3 +22,7 @@ vim.api.nvim_set_keymap('n', '<F11>', ":lua require'dap'.step_into()<CR>",
 
 vim.api.nvim_set_keymap('n', '<F12>', ":lua require'dap'.step_out()<CR>",
                         {noremap = true, silent = false})
+
+vim.api.nvim_set_keymap('n', '<k0>', "^",
+                        {noremap = true, silent = false})
+

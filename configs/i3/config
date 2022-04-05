@@ -2,11 +2,18 @@ include ~/.config/i3/settings/*.conf
 include ~/.config/i3/keybinds/*.conf
 include ~/.config/i3/settings/*.conf
 
-set $mod mod1
-set $browser brave-browser
+set  $home /home/aldo 
+set  $main     $home/Github/current/                   
 
-exec_always --no-startup-id ~/.config/polybar/launch.sh
-exec --no-startup-id urxvtd -q -o -f & 
-exec --no-startup-id xrdb -merge ~/.Xresources
-exec_always --no-startup-id feh -z --bg-scale ~/wallpapers/*.jpg
-exec_always --no-startup-id picom --experimental-backends
+set  $mod      mod4                                         
+
+set  $once     exec         --no-startup-id                       
+set  $always   exec_always  --no-startup-id                       
+
+$once urxvtd -q -o -f & 
+$once xrdb -merge ~/.Xresources
+
+$always /usr/lib/kdeconnectd
+$always ~/.config/polybar/launch.sh
+$always feh --bg-fill ~/wallpapers/c.jpg
+$always picom --experimental-backends
