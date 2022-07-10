@@ -2,10 +2,11 @@ include ~/.config/i3/settings/*.conf
 include ~/.config/i3/keybinds/*.conf
 include ~/.config/i3/settings/*.conf
 
-set  $home /home/aldo 
-set  $main     $home/Github/current/                   
+set  $home /home/aldoherzac
+set $browser google-chrome-stable
 
-set  $mod      mod4                                         
+set  $mod  mod4
+set  $alt  mod1
 
 set  $once     exec         --no-startup-id                       
 set  $always   exec_always  --no-startup-id                       
@@ -13,7 +14,7 @@ set  $always   exec_always  --no-startup-id
 $once urxvtd -q -o -f & 
 $once xrdb -merge ~/.Xresources
 
-$always /usr/lib/kdeconnectd
 $always ~/.config/polybar/launch.sh
-$always feh --bg-fill ~/wallpapers/c.jpg
-$always picom --experimental-backends
+$always feh --bg-fill ~/.wallpapers/*.jpg
+$always nm-applet &
+$always blueman-applet &
