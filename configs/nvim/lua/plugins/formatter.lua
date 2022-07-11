@@ -45,7 +45,7 @@ require("formatter").setup({
 			function()
 				return {
 					exe = "java",
-					args = { "-jar", "/home/aldoherzac/.local/share/nvim/formatters/google-java-format-1.15.0-all-deps.jar", "-" },
+					args = { "-jar", "/home/aldo/.local/share/nvim/formatters/google-java-format-1.15.0-all-deps.jar", "-" },
 					stdin = true,
 				}
 			end,

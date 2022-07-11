@@ -66,14 +66,6 @@ return require("packer").startup(function()
 		end,
 	})
 	use({ "neovim/nvim-lspconfig" })
-	use({
-		"nvim-neotest/neotest",
-		requires = {
-			"nvim-lua/plenary.nvim",
-			"nvim-treesitter/nvim-treesitter",
-			"antoinemadec/FixCursorHold.nvim",
-		},
-	})
 	use("p00f/nvim-ts-rainbow")
 	use("kdheepak/lazygit.nvim")
 	use("tpope/vim-surround")
@@ -126,8 +118,32 @@ return require("packer").startup(function()
 		"hoob3rt/lualine.nvim",
 		requires = { "kyazdani42/nvim-web-devicons", opt = true },
 	})
+	use("mfussenegger/nvim-dap")
+	use("nvim-neotest/neotest-python")
+	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } })
+	use("mfussenegger/nvim-dap-python")
 	use({
 		"nvim-telescope/telescope.nvim",
 		requires = { { "nvim-lua/plenary.nvim" } },
+	})
+	use({ "vim-test/vim-test" })
+	use({
+		"nvim-neotest/neotest",
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"nvim-treesitter/nvim-treesitter",
+			"antoinemadec/FixCursorHold.nvim",
+		},
+	})
+	use({
+		"glepnir/lspsaga.nvim",
+		branch = "main",
+		config = function()
+			local saga = require("lspsaga")
+
+			saga.init_lsp_saga({
+				max_preview_lines = 15,
+			})
+		end,
 	})
 end)
