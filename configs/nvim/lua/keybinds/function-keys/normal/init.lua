@@ -1,13 +1,17 @@
-vim.api.nvim_set_keymap("n", "<F1>", "", { noremap = true, silent = false })
-vim.api.nvim_set_keymap("n", "<F1>", ":Telescope ultisnips<CR>", { noremap = true, silent = false })
+keys["<F1>"] = ""
+keys["<F1>"] = ":Telescope ultisnips<CR>"
 
-vim.api.nvim_set_keymap("n", "<F2>", "", { noremap = true, silent = false })
-vim.api.nvim_set_keymap("n", "<F2>", ":Telekasten panel<CR>", { noremap = true, silent = false })
+keys["<F2>"] = ""
+keys["<F2>"] = ":Telekasten panel<CR>"
 
-vim.api.nvim_set_keymap("n", "<F3>", "", { noremap = true, silent = false })
-vim.api.nvim_set_keymap("n", "<F3>", ":Telekasten search_notes<CR>", { noremap = true, silent = false })
+keys["<F3>"] = ""
+keys["<F3>"] = ":Telekasten search_notes<CR>"
 
-vim.api.nvim_set_keymap("n", "<F4>", "", { noremap = true, silent = false })
-vim.api.nvim_set_keymap("n", "<F4>", ":Telekasten follow_link<CR>", { noremap = true, silent = false })
+keys["<F4>"] = ""
+keys["<F4>"] = ":Telekasten follow_link<CR>"
 
-vim.api.nvim_set_keymap("n", "<F5>", "ggVG:SnipRun<CR>", { noremap = true, silent = false })
+keys["<F5>"] = "ggVG:SnipRun<CR>"
+
+for k, v in pairs(keys) do
+	vim.api.nvim_set_keymap("n", k, v, { noremap = true, silent = false })
+end

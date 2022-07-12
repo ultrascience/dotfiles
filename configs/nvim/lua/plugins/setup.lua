@@ -13,6 +13,7 @@ require("neotest").setup({
 		require("neotest-python"),
 	},
 })
+require("refactoring").setup({})
 
 vim.cmd([[let g:vimtex_view_method = 'zathura']])
 vim.cmd([[ autocmd FileType tex,latex nnoremap <buffer> <F5> <esc>:VimtexCompile<CR> ]])

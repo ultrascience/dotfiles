@@ -1,4 +1,5 @@
 vim.cmd([[ let @q="A error\<ESC>gciw"]])
+vim.cmd([[ let @a=":s:vim.api.nvim_set_keymap(\"[a-z]\",:keys[: | s:{.*:: | s:,: ] =: | s:,::  \<cr>"]])
 vim.cmd([[ iabbrev xname Hernandez Zacateco Aldo Rene]])
 vim.cmd([[ iabbrev xmail zac@ciencias.unam.mx]])
 vim.cmd([[ iabbrev xuni  Universidad Nacional Autonoma de Mexico]])

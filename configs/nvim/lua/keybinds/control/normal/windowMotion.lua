@@ -1,15 +1,11 @@
 -- vim.api
---     .nvim_set_keymap('n', '<BS>', '`.', {noremap = true, silent = false})
+--     .nvim_set_keymap("n", "<BS>", "`.", {noremap = true, silent = false})
+keys = {}
+keys["<C-Right>"] = "<C-w>l"
+keys["<C-Left>"] = "<C-w>h"
+keys["<C-Up>"] = "<C-w>k"
+keys["<C-Down>"] = "<C-w>j"
 
-vim.api.nvim_set_keymap('n', '<C-Right>', '<C-w>l',
-                        {noremap = true, silent = false})
-
-vim.api.nvim_set_keymap('n', '<C-Left>', '<C-w>h',
-                        {noremap = true, silent = false})
-
-vim.api.nvim_set_keymap('n', '<C-Up>', '<C-w>k',
-                        {noremap = true, silent = false})
-
-vim.api.nvim_set_keymap('n', '<C-Down>', '<C-w>j',
-                        {noremap = true, silent = false})
-
+for k, v in pairs(keys) do
+	vim.api.nvim_set_keymap("n", k, v, { noremap = true, silent = false })
+end

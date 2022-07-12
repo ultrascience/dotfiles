@@ -1,9 +1,11 @@
 require("keybinds.control.normal.windowMotion")
 
-vim.api.nvim_set_keymap("n", "<c-s>", ":w<CR>", { noremap = true, silent = false })
+keys = {}
+keys["<c-s>"] = ":w<CR>"
+keys["<c-Q>"] = ":q!<CR>"
+keys["<c-q>"] = ":q<CR>"
+keys["<C-k>"] = "<cmd>lua vim.lsp.buf.signature_help()<CR>"
 
-vim.api.nvim_set_keymap("n", "<c-Q>", ":q!<CR>", { noremap = true, silent = true })
-
-vim.api.nvim_set_keymap("n", "<c-q>", ":q<CR>", { noremap = true, silent = true })
-
-vim.api.nvim_set_keymap("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", { noremap = true, silent = false })
+for k, v in pairs(keys) do
+	vim.api.nvim_set_keymap("n", k, v, { noremap = true, silent = false })
+end

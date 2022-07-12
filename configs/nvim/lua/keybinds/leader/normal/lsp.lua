@@ -1,24 +1,25 @@
-vim.api.nvim_set_keymap("n", "<leader>la", "<cmd>Lspsaga code_action<CR>", { noremap = true, silent = false })
+keys = {}
+local prefix = "<leader>l"
 
-vim.api.nvim_set_keymap("n", "<leader>lf", "<cmd>Lspsaga lsp_finder<CR>", { noremap = true, silent = false })
+keys[prefix .. "a"] = "<cmd>Lspsaga code_action<CR>"
+keys[prefix .. "f"] = "<cmd>Lspsaga lsp_finder<CR>"
+keys[prefix .. "i"] = "<cmd>Lspsaga implement<CR>"
+keys[prefix .. "d"] = "<cmd>lua vim.lsp.buf.definition()<CR>"
+keys[prefix .. "D"] = "<cmd>lua vim.lsp.buf.declaration()<CR>"
+keys[prefix .. "rn"] = "<cmd>Lspsaga rename<CR>"
+keys[prefix .. "rf"] = "<cmd>lua vim.lsp.buf.references()<CR>"
+keys[prefix .. "ci"] = "<cmd>lua vim.lsp.buf.incoming_calls()<CR>"
+keys[prefix .. "co"] = "<cmd>lua vim.lsp.buf.outgoing_calls()<CR>"
+keys[prefix .. "cr"] = "<cmd>lua vim.lsp.buf.clear_references()<CR>"
+keys[prefix .. "k"] = "<cmd>Lspsaga open_floaterm<CR>"
+keys[prefix .. "p"] = "<cmd>Lspsaga preview_definition<CR>"
+keys[prefix .. "wa"] = "<cmd>lua vim.lsp.buf.add_workspace_folder<CR>"
+keys[prefix .. "wr"] = "<cmd>lua vim.lsp.buf.remove_workspace_folder<CR>"
+keys[prefix .. "s"] = "<cmd>lua vim.lsp.buf.signature_help<CR>"
+keys[prefix .. "o"] = "<cmd>lua vim.diagnostic.open_float()<CR>"
 
-vim.api.nvim_set_keymap("n", "<leader>li", "<cmd>Lspsaga implement<CR>", { noremap = true, silent = false })
+keys["<c-c>"] = "<C-\\><C-n><cmd>Lspsaga close_floaterm<CR>"
 
-vim.api.nvim_set_keymap("n", "<leader>ld", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = false })
-
-vim.api.nvim_set_keymap("n", "<leader>lD", "<cmd>lua vim.lsp.buf.declaration()<CR>", { noremap = true, silent = false })
-
-vim.api.nvim_set_keymap("n", "<leader>lrn", "<cmd>Lspsaga rename<CR>", { noremap = true, silent = false })
-
-vim.api.nvim_set_keymap("n", "<leader>lrf", "<cmd>lua vim.lsp.buf.references()<CR>", { noremap = true, silent = false })
-vim.api.nvim_set_keymap("n", "<leader>lk", "<cmd>Lspsaga open_floaterm<CR>", { noremap = true, silent = false })
-vim.keymap.set("t", "<c-c>", "<C-\\><C-n><cmd>Lspsaga close_floaterm<CR>", { silent = true, noremap = true })
-
-vim.api.nvim_set_keymap("n", "<leader>lp", "<cmd>Lspsaga preview_definition<CR>", { noremap = true, silent = false })
-
-vim.api.nvim_set_keymap(
-	"n",
-	"<leader>lo",
-	"<cmd>lua vim.diagnostic.open_float()<CR>",
-	{ noremap = true, silent = false }
-)
+for k, v in pairs(keys) do
+	vim.api.nvim_set_keymap("n", k, v, { noremap = true, silent = false })
+end

@@ -1,0 +1,5 @@
+snippet for "for"
+for k, v in pairs(keys) do
+	vim.api.nvim_set_keymap("i", k, v, { noremap = true, silent = false })
+end
+endsnippet

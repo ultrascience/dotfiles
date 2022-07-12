@@ -1,29 +1,19 @@
-vim.api.nvim_set_keymap("n", "x", "", { noremap = false, silent = false })
+keys = {}
+keys["x"] = ""
+keys["xy"] = ":HopAnywhere<CR>"
+keys["x1"] = ":HopChar1<CR>"
+keys["x2"] = ":HopChar2<CR>"
+keys["xl"] = ":HopLine<CR>"
+keys["xb"] = ":HopPatternBC<CR>"
+keys["xa"] = ":HopPatternAC<CR>"
+keys["a"] = ""
+keys["a"] = ":HopPattern<CR>"
+keys["xw"] = ":HopWord<CR>"
+keys["xwa"] = ":HopWordAC<CR>"
+keys["xwb"] = ":HopWordBC<CR>"
+keys["xc"] = ":HopWordCurrentLine<CR>"
+keys["xz"] = ":HopPatternCurrentLine<CR>"
 
-vim.api.nvim_set_keymap("n", "xy", ":HopAnywhere<CR>", { noremap = true, silent = false })
-
-vim.api.nvim_set_keymap("n", "x1", ":HopChar1<CR>", { noremap = true, silent = false })
-
-vim.api.nvim_set_keymap("n", "x2", ":HopChar2<CR>", { noremap = true, silent = false })
-
-vim.api.nvim_set_keymap("n", "xl", ":HopLine<CR>", { noremap = true, silent = false })
-
-vim.api.nvim_set_keymap("n", "xb", ":HopPatternBC<CR>", { noremap = true, silent = false })
-
-vim.api.nvim_set_keymap("n", "xa", ":HopPatternAC<CR>", { noremap = true, silent = false })
-
-vim.api.nvim_set_keymap("n", "a", "", { noremap = true, silent = false })
-
-vim.api.nvim_set_keymap("n", "a", ":HopPattern<CR>", { noremap = true, silent = false })
-
-vim.api.nvim_set_keymap("n", "xw", ":HopWord<CR>", { noremap = true, silent = false })
-
-vim.api.nvim_set_keymap("n", "xwa", ":HopWordAC<CR>", { noremap = true, silent = false })
-
-vim.api.nvim_set_keymap("n", "xwb", ":HopWordBC<CR>", { noremap = true, silent = false })
-
--- vim.api.nvim_set_keymap("n", "ñ", ":ab ", { noremap = false, silent = false })
-
-vim.api.nvim_set_keymap("n", "xc", ":HopWordCurrentLine<CR>", { noremap = false, silent = false })
-
-vim.api.nvim_set_keymap("n", "xz", ":HopPatternCurrentLine<CR>", { noremap = false, silent = false })
+for k, v in pairs(keys) do
+	vim.api.nvim_set_keymap("n", k, v, { noremap = true, silent = false })
+end

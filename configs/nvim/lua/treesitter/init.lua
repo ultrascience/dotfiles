@@ -2,6 +2,20 @@ require("nvim-treesitter.configs").setup({
 	highlight = {
 		enable = true,
 	},
+	smart_rename = {
+		enable = true,
+		keymaps = {
+			smart_rename = "grr",
+		},
+	},
+	refactor = {
+		highlight_definitions = {
+			enable = true,
+			-- Set to false if you have an `updatetime` of ~100.
+			clear_on_cursor_move = true,
+		},
+		highlight_current_scope = { enable = true },
+	},
 	textobjects = {
 		select = {
 			enable = true,

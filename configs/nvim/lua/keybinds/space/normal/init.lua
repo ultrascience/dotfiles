@@ -1,15 +1,20 @@
-vim.api.nvim_set_keymap("n", "<space>l", ":Telescope lsp_", { noremap = true, silent = false })
-vim.api.nvim_set_keymap("n", "<space>d", ":Telescope diagnostics<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<space>m", ":Telescope marks<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<space>t", ":Telescope ", { noremap = true, silent = false })
-vim.api.nvim_set_keymap("n", "<space>b", ":Telescope buffers<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<space>g", ":Telescope git", { noremap = true, silent = false })
-vim.api.nvim_set_keymap("n", "<space>w", ":Telescope live_grep<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<space>j", ":Telescope jumplist<CR>", { noremap = true, silent = false })
-vim.api.nvim_set_keymap("n", "<space>c", ":Copilot<CR>", { noremap = true, silent = false })
-vim.api.nvim_set_keymap("n", "<space>v", ":vsplit<CR>", { noremap = true, silent = false })
-vim.api.nvim_set_keymap("n", "<space>s", ":split<CR>", { noremap = true, silent = false })
-vim.api.nvim_set_keymap("n", "<space>o", ":on<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<space>n", ":vsplit | :TroubleToggle<CR>", { noremap = true, silent = false })
-vim.api.nvim_set_keymap("n", "ñ", ":LazyGit<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<space>r", ":Telescope registers<CR>", { noremap = true, silent = false })
+keys = {}
+keys["<space>l"] = ":Telescope lsp_"
+keys["<space>d"] = ":Telescope diagnostics<CR>"
+keys["<space>m"] = ":Telescope marks<CR>"
+keys["<space>t"] = ":Telescope "
+keys["<space>b"] = ":Telescope buffers<CR>"
+keys["<space>g"] = ":Telescope git"
+keys["<space>w"] = ":Telescope live_grep<CR>"
+keys["<space>j"] = ":Telescope jumplist<CR>"
+keys["<space>c"] = ":Copilot<CR>"
+keys["<space>v"] = ":vsplit<CR>"
+keys["<space>s"] = ":split<CR>"
+keys["<space>o"] = ":on<CR>"
+keys["<space>n"] = ":vsplit | :TroubleToggle<CR>"
+keys["ñ"] = ":LazyGit<CR>"
+keys["<space>r"] = ":Telescope registers<CR>"
+
+for k, v in pairs(keys) do
+	vim.api.nvim_set_keymap("n", k, v, { noremap = true, silent = false })
+end

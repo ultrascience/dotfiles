@@ -1,41 +1,26 @@
-vim.api.nvim_set_keymap("n", "<leader>dt", ":lua require'dapui'.toggle()<CR>", { noremap = true, silent = false })
+keys = {}
+keys["<leader>dt"] = ":lua require'dapui'.toggle()<CR>"
 
-vim.api.nvim_set_keymap(
-	"n",
-	"<leader>df",
-	":lua require('dapui').float_element()<CR>",
-	{ noremap = true, silent = false }
-)
+keys["<leader>df"] = ":lua require('dapui').float_element()<CR>"
 
-vim.api.nvim_set_keymap("n", "<leader>de", ":lua require('dapui').eval()<CR>", { noremap = true, silent = false })
+keys["<leader>de"] = ":lua require('dapui').eval()<CR>"
 
-vim.api.nvim_set_keymap("n", "<leader>dc", ":lua require'dap'.continue()<CR>", { noremap = true, silent = false })
+keys["<leader>dc"] = ":lua require'dap'.continue()<CR>"
 
-vim.api.nvim_set_keymap(
-	"n",
-	"<leader>db",
-	":lua require'dap'.toggle_breakpoint()<CR>",
-	{ noremap = true, silent = false }
-)
+keys["<leader>db"] = ":lua require'dap'.toggle_breakpoint()<CR>"
 
-vim.api.nvim_set_keymap(
-	"n",
-	"<leader>ds",
-	":lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>",
-	{ noremap = true, silent = false }
-)
+keys["<leader>ds"] = ":lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>"
 
-vim.api.nvim_set_keymap("n", "<leader>dp", ":lua require'dap'.print_locals()<CR>", { noremap = true, silent = false })
-vim.api.nvim_set_keymap("n", "<leader>dso", ":lua require'dap'.step_over()<CR>", { noremap = true, silent = false })
-vim.api.nvim_set_keymap("n", "<leader>dsi", ":lua require'dap'.step_into()<CR>", { noremap = true, silent = false })
+keys["<leader>dp"] = ":lua require'dap'.print_locals()<CR>"
+keys["<leader>dso"] = ":lua require'dap'.step_over()<CR>"
+keys["<leader>dsi"] = ":lua require'dap'.step_into()<CR>"
 
-vim.api.nvim_set_keymap(
-	"n",
-	"<leader>dm",
-	":lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>",
-	{ noremap = true, silent = false }
-)
+keys["<leader>dm"] = ":lua require'dap'.set_breakpoint(nil nil, vim.fn.input('Log point message: '))<CR>"
+--
+keys["<leader>do"] = ":lua require'dap'.repl.open()<CR>"
 
-vim.api.nvim_set_keymap("n", "<leader>do", ":lua require'dap'.repl.open()<CR>", { noremap = true, silent = false })
+keys["<leader>dl"] = ":lua require'dap'.run_last()<CR>"
 
-vim.api.nvim_set_keymap("n", "<leader>dl", ":lua require'dap'.run_last()<CR>", { noremap = true, silent = false })
+for k, v in pairs(keys) do
+	vim.api.nvim_set_keymap("n", k, v, { noremap = true, silent = false })
+end
