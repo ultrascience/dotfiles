@@ -11,19 +11,19 @@ local with_root_file = function(...)
 end
 
 local sources = {
-	b.formatting.shfmt,
 	b.diagnostics.shellcheck.with({
 		diagnostics_format = diagnostics_code_template,
 	}),
 	-- code actions
 	b.code_actions.gitsigns,
 	b.code_actions.gitrebase,
+	b.code_actions.eslint,
 	b.diagnostics.eslint,
 	b.code_actions.refactoring,
-	b.code_actions.semgrep,
-	b.code_actions.gitlint,
-	b.code_actions.eslint,
-	-- b.completion.spell
+	b.diagnostics.semgrep.with({
+		extra_args = { "--config", "auto" },
+	}),
+	b.diagnostics.gitlint,
 }
 
 local M = {}

@@ -2,8 +2,9 @@ include ~/.config/i3/settings/*.conf
 include ~/.config/i3/keybinds/*.conf
 include ~/.config/i3/settings/*.conf
 
-set  $home /home/aldoherzac
+set  $home /home/aldo
 set $browser google-chrome-stable
+set $browser2 brave
 
 set  $mod  mod4
 set  $alt  mod1
@@ -11,10 +12,11 @@ set  $alt  mod1
 set  $once     exec         --no-startup-id                       
 set  $always   exec_always  --no-startup-id                       
 
-$once urxvtd -q -o -f & 
-$once xrdb -merge ~/.Xresources
+# Examples
+gaps outer 2
+gaps inner 7
+smart_gaps on
+hide_edge_borders smart_no_gaps
 
 $always ~/.config/polybar/launch.sh
-$always feh --bg-fill ~/.wallpapers/*.jpg
-$always nm-applet &
-$always blueman-applet &
+$always feh --randomize --bg-fill ~/.wallpapers/*.jpg
